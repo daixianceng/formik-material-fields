@@ -1,0 +1,25 @@
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Field } from 'formik';
+import { optionShape } from '../utils/PropTypes';
+import RadioGroupField from '../RadioGroupField';
+
+const FormikRadioGroupField = props => {
+  return <Field {...props} component={RadioGroupField} />;
+};
+
+if (process.env.NODE_ENV !== 'production') {
+  FormikRadioGroupField.propTypes = {
+    options: PropTypes.arrayOf(optionShape).isRequired,
+    row: PropTypes.oneOf([true, false, 'all']),
+    label: PropTypes.node,
+    helperText: PropTypes.node,
+    RadioProps: PropTypes.object,
+    RadioGroupProps: PropTypes.object,
+    FormLabelProps: PropTypes.object,
+    FormHelperTextProps: PropTypes.object,
+    FormControlLabelProps: PropTypes.object,
+  };
+}
+
+export default FormikRadioGroupField;

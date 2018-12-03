@@ -1,0 +1,62 @@
+{
+  "name": "formik-material-fields",
+  "version": "0.0.1",
+  "description": "",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "directories": {
+    "example": "examples",
+    "test": "tests"
+  },
+  "scripts": {
+    "build:commonjs": "cross-env BABEL_ENV=commonjs babel src --out-dir lib",
+    "build:es": "babel src --out-dir es",
+    "build:umd": "cross-env NODE_ENV=development rollup -c -o dist/formik-material-fields.js",
+    "build:umd:min": "cross-env NODE_ENV=production rollup -c -o dist/formik-material-fields.min.js",
+    "build": "npm run build:commonjs && npm run build:es && npm run build:umd && npm run build:umd:min",
+    "dev": "rollup -c -w",
+    "test": "node tests/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daixianceng/formik-material-fields.git"
+  },
+  "keywords": [
+    "formik",
+    "material",
+    "form",
+    "field"
+  ],
+  "author": {
+    "name": "Cosmo",
+    "email": "daixianceng@gmail.com"
+  },
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/daixianceng/formik-material-fields/issues"
+  },
+  "homepage": "https://github.com/daixianceng/formik-material-fields#readme",
+  "peerDependencies": {
+    "@material-ui/core": ">=3",
+    "classnames": ">=2",
+    "formik": ">=1",
+    "prop-types": ">=15",
+    "react": ">=15",
+    "react-dom": ">=15"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/cli": "^7.1.5",
+    "@babel/core": "^7.1.6",
+    "@babel/plugin-external-helpers": "^7.0.0",
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
+    "@babel/preset-env": "^7.1.6",
+    "@babel/preset-react": "^7.0.0",
+    "cross-env": "^5.2.0",
+    "rollup-plugin-babel": "^4.0.3-0",
+    "rollup-plugin-commonjs": "^9.2.0",
+    "rollup-plugin-json": "^3.1.0",
+    "rollup-plugin-node-resolve": "^3.4.0",
+    "rollup-plugin-uglify": "^6.0.0"
+  }
+}
