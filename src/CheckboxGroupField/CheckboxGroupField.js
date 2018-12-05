@@ -10,6 +10,7 @@ import FormLabel from '@material-ui/core/FormLabel';
 import FormGroup from '@material-ui/core/FormGroup';
 import { withStyles } from '@material-ui/core/styles';
 
+import { toggle } from '../utils/functions';
 import { fieldShape, formShape, optionShape } from '../utils/PropTypes';
 import s from './styles';
 
@@ -20,20 +21,22 @@ class CheckboxGroupField extends React.Component {
 
   static defaultProps = {
     row: false,
+    multiple: false,
   };
 
   handleChange = event => {
-    if (event.target.checked) {
-      this.props.field.onChange({
-        target: { value: event.target.value, name: this.props.field.name },
-      });
-    } else {
-      this.props.field.onChange({
-        target: { value: undefined, name: this.props.field.name },
-      });
+    const { field, multiple } = this.props;
+    let value;
+    if (multiple) {
+      value = toggle(this.filterValue(field.value), event.target.value);
+    } else if (event.target.checked) {
+      value = event.target.value;
     }
+    field.onChange({
+      target: { value, name: field.name },
+    });
     if (this.props.onChange) {
-      this.props.onChange(event);
+      this.props.onChange(value);
     }
     if (!this.state.dirty) {
       this.setState({
@@ -42,11 +45,17 @@ class CheckboxGroupField extends React.Component {
     }
   };
 
+  filterValue = value => {
+    const optionValues = this.props.options.map(option => option.value);
+    return value.filter(v => optionValues.includes(v));
+  };
+
   render() {
     const {
-      field: { onChange, onBlur, ...field },
+      field: { onChange: fieldOnChange, onBlur, ...field },
       form: { errors },
       options,
+      multiple,
       label,
       row,
       helperText,
@@ -55,6 +64,7 @@ class CheckboxGroupField extends React.Component {
       FormControlLabelProps,
       CheckboxProps,
       FormGroupProps,
+      onChange,
       className,
       classes,
       ...props
@@ -84,10 +94,13 @@ class CheckboxGroupField extends React.Component {
               control={
                 <Checkbox
                   {...CheckboxProps}
-                  name={field.name}
                   value={option.value}
                   onChange={this.handleChange}
-                  checked={option.value === field.value}
+                  checked={
+                    multiple
+                      ? field.value.includes(option.value)
+                      : option.value === field.value
+                  }
                 />
               }
               {...FormControlLabelProps}
@@ -116,6 +129,7 @@ if (process.env.NODE_ENV !== 'production') {
     field: fieldShape.isRequired,
     form: formShape.isRequired,
     options: PropTypes.arrayOf(optionShape).isRequired,
+    multiple: PropTypes.bool,
     row: PropTypes.oneOf([true, false, 'all']),
     label: PropTypes.node,
     helperText: PropTypes.node,
