@@ -25,7 +25,7 @@ class RadioGroupField extends React.Component {
   handleChange = event => {
     this.props.field.onChange(event);
     if (this.props.onChange) {
-      this.props.onChange(event);
+      this.props.onChange(event.target.value);
     }
     if (!this.state.dirty) {
       this.setState({
@@ -36,7 +36,7 @@ class RadioGroupField extends React.Component {
 
   render() {
     const {
-      field: { onChange, onBlur, ...field },
+      field: { onChange: fieldOnChange, onBlur, ...field },
       form: { errors },
       options,
       label,
@@ -47,6 +47,7 @@ class RadioGroupField extends React.Component {
       FormControlLabelProps,
       RadioProps,
       RadioGroupProps,
+      onChange,
       className,
       classes,
       ...props
