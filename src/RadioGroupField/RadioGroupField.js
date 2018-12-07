@@ -11,7 +11,7 @@ import FormLabel from '@material-ui/core/FormLabel';
 import { withStyles } from '@material-ui/core/styles';
 
 import { fieldShape, formShape, optionShape } from '../utils/PropTypes';
-import s from './styles';
+import s from '../utils/rowStyles';
 
 class RadioGroupField extends React.Component {
   state = {

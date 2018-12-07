@@ -12,7 +12,7 @@ import { withStyles } from '@material-ui/core/styles';
 
 import { toggle } from '../utils/functions';
 import { fieldShape, formShape, optionShape } from '../utils/PropTypes';
-import s from './styles';
+import s from '../utils/rowStyles';
 
 class CheckboxGroupField extends React.Component {
   state = {
