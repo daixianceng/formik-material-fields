@@ -1,1 +1,1 @@
-export { default } from './FormikRadioGroupField';
+export { default } from './FormikCheckboxGroupField';
