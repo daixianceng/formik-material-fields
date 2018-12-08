@@ -1,8 +1,5 @@
 export { default as CheckboxGroupField } from './CheckboxGroupField';
 export {
-  default as FormikBoolRadioGroupField,
-} from './FormikBoolRadioGroupField';
-export {
   default as FormikCheckboxGroupField,
 } from './FormikCheckboxGroupField';
 export { default as FormikRadioGroupField } from './FormikRadioGroupField';
