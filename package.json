@@ -14,6 +14,8 @@
     "build:umd": "cross-env NODE_ENV=development rollup -c -o dist/formik-material-fields.js",
     "build:umd:min": "cross-env NODE_ENV=production rollup -c -o dist/formik-material-fields.min.js",
     "build": "npm run build:commonjs && npm run build:es && npm run build:umd && npm run build:umd:min",
+    "clean": "rimraf lib dist es coverage",
+    "prepare": "npm run clean && npm run build",
     "dev": "rollup -c -w",
     "test": "node tests/test.js"
   },
@@ -48,11 +50,11 @@
   "devDependencies": {
     "@babel/cli": "^7.1.5",
     "@babel/core": "^7.1.6",
-    "@babel/plugin-external-helpers": "^7.0.0",
     "@babel/plugin-proposal-class-properties": "^7.1.0",
     "@babel/preset-env": "^7.1.6",
     "@babel/preset-react": "^7.0.0",
     "cross-env": "^5.2.0",
+    "rimraf": "^2.6.2",
     "rollup-plugin-babel": "^4.0.3-0",
     "rollup-plugin-commonjs": "^9.2.0",
     "rollup-plugin-json": "^3.1.0",
