@@ -1,7 +1,7 @@
 import commonjs from 'rollup-plugin-commonjs';
 import resolve from 'rollup-plugin-node-resolve';
 import babel from 'rollup-plugin-babel';
-import json from 'rollup-plugin-json';
+import replace from 'rollup-plugin-replace';
 import { uglify } from 'rollup-plugin-uglify';
 import pkg from './package.json';
 
@@ -25,7 +25,9 @@ const config = {
       runtimeHelpers: true,
     }),
     commonjs(),
-    json(),
+    replace({
+      'process.env.NODE_ENV': JSON.stringify(env),
+    }),
   ],
   external: Object.keys(pkg.peerDependencies || {}),
 };
