@@ -1,6 +1,6 @@
 # formik-material-fields
 
-a set of material style fields for [formik](https://github.com/jaredpalmer/formik)
+A set of material style fields for [formik](https://github.com/jaredpalmer/formik)
 
 `formik-material-fields` = [formik](https://github.com/jaredpalmer/formik) + [material-ui](https://github.com/mui-org/material-ui)
 
@@ -74,3 +74,7 @@ class MyForm extends Component {
 }
 
 ```
+
+## License
+
+**formik-material-fields** is released under the FSB License. See the bundled `LICENSE` for details.
