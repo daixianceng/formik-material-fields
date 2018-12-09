@@ -11,7 +11,7 @@
 
 其它道具将会传递到 [@material-ui/core/TextField](https://material-ui.com/api/text-field/) 组件
 
-## Example
+## 例子
 
 <p align="center">
   <img src="../../media/FormikSelectField.gif" alt="FormikSelectField" />

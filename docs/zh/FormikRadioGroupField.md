@@ -16,7 +16,7 @@
 
 其它道具将会传递到 [@material-ui/core/FormControl](https://material-ui.com/api/form-control/) 组件
 
-## Example
+## 例子
 
 <p align="center">
   <img src="../../media/FormikRadioGroupField.gif" alt="FormikRadioGroupField" />
