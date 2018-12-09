@@ -10,6 +10,7 @@ const FormikCheckboxGroupField = props => {
 
 if (process.env.NODE_ENV !== 'production') {
   FormikCheckboxGroupField.propTypes = {
+    name: PropTypes.string.isRequired,
     options: PropTypes.arrayOf(optionShape).isRequired,
     row: PropTypes.oneOf([true, false, 'all']),
     label: PropTypes.node,

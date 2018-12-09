@@ -13,6 +13,7 @@ const FormikTextField = ({ children, ...props }) => {
 
 if (process.env.NODE_ENV !== 'production') {
   FormikTextField.propTypes = {
+    name: PropTypes.string.isRequired,
     children: PropTypes.node,
   };
 }
