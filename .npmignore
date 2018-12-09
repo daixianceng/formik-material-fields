@@ -4,7 +4,6 @@
 /node_modules
 
 # build tools
-/es
 .babelrc
 .gitignore
 .npmignore
@@ -12,8 +11,11 @@
 rollup.config.js
 
 # dev
-/examples
 /src
+
+# docs
+/docs
+/media
 
 # testing
 /tests
