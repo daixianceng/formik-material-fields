@@ -4,7 +4,7 @@ import { Field } from 'formik';
 import SelectField from '../SelectField';
 import { optionShape } from '../utils/PropTypes';
 
-const FormikSelectField = props => {
+const FormikSelectField = ({ render, ...props}) => {
   return <Field {...props} component={SelectField} />;
 };
 

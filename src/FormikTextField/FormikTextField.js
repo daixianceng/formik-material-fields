@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Field } from 'formik';
 import TextField from '../TextField';
 
-const FormikTextField = ({ children, ...props }) => {
+const FormikTextField = ({ children, render, ...props }) => {
   return (
     <Field {...props} component={TextField}>
       {children}

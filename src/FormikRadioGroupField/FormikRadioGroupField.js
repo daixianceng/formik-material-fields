@@ -4,7 +4,7 @@ import { Field } from 'formik';
 import { optionShape } from '../utils/PropTypes';
 import RadioGroupField from '../RadioGroupField';
 
-const FormikRadioGroupField = props => {
+const FormikRadioGroupField = ({ render, ...props}) => {
   return <Field {...props} component={RadioGroupField} />;
 };
 

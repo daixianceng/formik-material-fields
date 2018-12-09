@@ -4,7 +4,7 @@ import { Field } from 'formik';
 import { optionShape } from '../utils/PropTypes';
 import CheckboxGroupField from '../CheckboxGroupField';
 
-const FormikCheckboxGroupField = props => {
+const FormikCheckboxGroupField = ({ render, ...props}) => {
   return <Field {...props} component={CheckboxGroupField} />;
 };
 
