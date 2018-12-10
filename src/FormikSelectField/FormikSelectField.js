@@ -12,6 +12,7 @@ if (process.env.NODE_ENV !== 'production') {
   FormikSelectField.propTypes = {
     name: PropTypes.string.isRequired,
     options: PropTypes.arrayOf(optionShape).isRequired,
+    multiple: PropTypes.bool,
     native: PropTypes.bool,
   };
 }

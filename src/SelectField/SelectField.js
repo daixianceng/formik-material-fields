@@ -6,26 +6,29 @@ import { optionShape } from '../utils/PropTypes';
 
 const SelectField = ({
   options,
+  multiple = false,
   native = false,
   InputLabelProps,
   SelectProps,
   children,
   ...props
 }) => {
+  const isNative = !multiple && native;
   return (
     <TextField
       {...props}
       InputLabelProps={{
-        shrink: native === true ? true : undefined,
+        shrink: isNative === true ? true : undefined,
         ...InputLabelProps,
       }}
       SelectProps={{
         ...SelectProps,
-        native,
+        multiple,
+        native: isNative,
       }}
       select
     >
-      {native
+      {isNative
         ? options.map(option => (
             <option key={option.value} value={option.value}>
               {option.label}
@@ -43,6 +46,7 @@ const SelectField = ({
 if (process.env.NODE_ENV !== 'production') {
   SelectField.propTypes = {
     options: PropTypes.arrayOf(optionShape).isRequired,
+    multiple: PropTypes.bool,
     native: PropTypes.bool,
   };
 }
