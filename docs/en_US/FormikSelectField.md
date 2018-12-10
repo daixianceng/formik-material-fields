@@ -4,6 +4,7 @@
 
 |Name|Type|Default|Description|
 |---|---|---|---|
+|multiple|`bool`|`false`|Whether to enable multiple selection, if it is `true`, the field value in `initialValues` must be an array, and the `native` prop will not work|
 |name|`string`||The name of the select field, see formik docs [field#name](https://jaredpalmer.com/formik/docs/api/field#name)|
 |native|`bool`|`false`|Whether to use the native drop-down menu|
 |options|`array`||Drop-down menu list, each of which is an object like `{ label: 'Male', value: 'male' }`, `value` must be unique|

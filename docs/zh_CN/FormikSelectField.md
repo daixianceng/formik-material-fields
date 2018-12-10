@@ -4,6 +4,7 @@
 
 |名字|类型|默认|描述|
 |---|---|---|---|
+|multiple|`bool`|`false`|是否启用多选，如果为`true`，`initialValues`中的字段值必须是一个数组，且`native`将不起作用|
 |name|`string`||选择框字段的名字，见formik文档 [field#name](https://jaredpalmer.com/formik/docs/api/field#name)|
 |native|`bool`|`false`|是否使用原生下拉菜单|
 |options|`array`||下拉菜单列表，每一项是一个形如`{ label: 'Male', value: 'male' }`的对象，`value`必须唯一|
