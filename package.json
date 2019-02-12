@@ -1,6 +1,6 @@
 {
   "name": "formik-material-fields",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A set of material style fields for formik",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -8,7 +8,7 @@
     "test": "tests"
   },
   "scripts": {
-    "build:commonjs": "cross-env BABEL_ENV=commonjs babel src --out-dir lib",
+    "build:commonjs": "cross-env BABEL_ENV=commonjs babel src --out-dir lib --presets=@babel/preset-env,@babel/preset-react",
     "build:es": "babel src --out-dir es",
     "build:umd": "cross-env NODE_ENV=development rollup -c -o dist/formik-material-fields.js",
     "build:umd:min": "cross-env NODE_ENV=production rollup -c -o dist/formik-material-fields.min.js",
