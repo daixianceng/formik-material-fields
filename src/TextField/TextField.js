@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import MatTextField from '@material-ui/core/TextField';
-import { fieldShape, formShape } from '../utils/PropTypes';
+import {fieldShape, formShape} from '../utils/PropTypes';
+import {getIn} from "formik";
 
 class TextField extends React.Component {
   handleChange = event => {
@@ -21,23 +22,23 @@ class TextField extends React.Component {
   render() {
     const {
       field,
-      form: { touched, errors },
+      form: {touched, errors},
       helperText,
       children,
       ...props
     } = this.props;
-    const message = touched[field.name] && errors[field.name];
+    const message = getIn(touched,field.name) && getIn(errors,field.name);
     return (
-      <MatTextField
-        {...props}
-        {...field}
-        error={Boolean(message)}
-        helperText={message || helperText}
-        onChange={this.handleChange}
-        onBlur={this.handleBlur}
-      >
-        {children}
-      </MatTextField>
+        <MatTextField
+            {...props}
+            {...field}
+            error={Boolean(message)}
+            helperText={message || helperText}
+            onChange={this.handleChange}
+            onBlur={this.handleBlur}
+        >
+          {children}
+        </MatTextField>
     );
   }
 }
