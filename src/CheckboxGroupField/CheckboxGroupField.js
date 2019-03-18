@@ -9,6 +9,7 @@ import FormHelperText from '@material-ui/core/FormHelperText';
 import FormLabel from '@material-ui/core/FormLabel';
 import FormGroup from '@material-ui/core/FormGroup';
 import { withStyles } from '@material-ui/core/styles';
+import {getIn} from "formik";
 
 import { toggle } from '../utils/functions';
 import { fieldShape, formShape, optionShape } from '../utils/PropTypes';
@@ -69,7 +70,7 @@ class CheckboxGroupField extends React.Component {
       classes,
       ...props
     } = this.props;
-    const message = this.state.dirty && errors[field.name];
+    const message = this.state.dirty && ge(errors, field.name);
     return (
       <FormControl
         className={cx({ [classes.rowContainer]: row === 'all' }, className)}

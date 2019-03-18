@@ -9,6 +9,7 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import FormLabel from '@material-ui/core/FormLabel';
 import { withStyles } from '@material-ui/core/styles';
+import {getIn} from "formik";
 
 import { fieldShape, formShape, optionShape } from '../utils/PropTypes';
 import s from '../utils/rowStyles';
@@ -52,7 +53,7 @@ class RadioGroupField extends React.Component {
       classes,
       ...props
     } = this.props;
-    const message = this.state.dirty && errors[field.name];
+    const message = this.state.dirty && get(errors, field.name);
     return (
       <FormControl
         className={cx({ [classes.rowContainer]: row === 'all' }, className)}
