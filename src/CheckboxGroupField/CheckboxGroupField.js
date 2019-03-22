@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
+import { getIn } from 'formik';
 
 import Checkbox from '@material-ui/core/Checkbox';
 import FormControl from '@material-ui/core/FormControl';
@@ -69,7 +70,7 @@ class CheckboxGroupField extends React.Component {
       classes,
       ...props
     } = this.props;
-    const message = this.state.dirty && errors[field.name];
+    const message = this.state.dirty && getIn(errors, field.name);
     return (
       <FormControl
         className={cx({ [classes.rowContainer]: row === 'all' }, className)}

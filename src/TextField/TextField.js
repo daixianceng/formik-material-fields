@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { getIn } from 'formik';
 import MatTextField from '@material-ui/core/TextField';
 import { fieldShape, formShape } from '../utils/PropTypes';
 
@@ -26,7 +27,7 @@ class TextField extends React.Component {
       children,
       ...props
     } = this.props;
-    const message = touched[field.name] && errors[field.name];
+    const message = getIn(touched, field.name) && getIn(errors, field.name);
     return (
       <MatTextField
         {...props}
