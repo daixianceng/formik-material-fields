@@ -1,5 +1,7 @@
 # formik-material-fields
 
+![npm](https://img.shields.io/npm/v/formik-material-fields.svg) ![npm bundle size (version)](https://img.shields.io/bundlephobia/min/formik-material-fields/0.0.5.svg) ![npm](https://img.shields.io/npm/dw/formik-material-fields.svg)
+
 A set of material style fields for [formik](https://github.com/jaredpalmer/formik)
 
 `formik-material-fields` = [formik](https://github.com/jaredpalmer/formik) + [material-ui](https://github.com/mui-org/material-ui)
