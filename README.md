@@ -8,8 +8,11 @@ This library provides the following components:
 
 - `FormikTextField`
 - `FormikSelectField`
+- `FormikRadioField`
 - `FormikRadioGroupField`
+- `FormikCheckboxField`
 - `FormikCheckboxGroupField`
+- `FormikSwitchField`
 
 ## Documentation
 
@@ -72,7 +75,6 @@ class MyForm extends Component {
     );
   }
 }
-
 ```
 
 ## License
