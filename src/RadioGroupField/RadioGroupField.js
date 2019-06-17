@@ -23,7 +23,7 @@ class RadioGroupField extends React.Component {
     const { field, form, onChange } = this.props;
     field.onChange(event);
     if (onChange) {
-      onChange(event.target.value);
+      onChange(event.target.value, event);
     }
     if (!getIn(form.touched, field.name)) {
       form.setFieldTouched(field.name);

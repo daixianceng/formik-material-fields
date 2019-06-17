@@ -33,7 +33,7 @@ class CheckboxGroupField extends React.Component {
       target: { value, name: field.name },
     });
     if (onChange) {
-      onChange(value);
+      onChange(value, event);
     }
     if (!getIn(form.touched, field.name)) {
       form.setFieldTouched(field.name);
