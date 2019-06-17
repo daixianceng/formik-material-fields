@@ -38,7 +38,7 @@
   },
   "homepage": "https://github.com/daixianceng/formik-material-fields#readme",
   "peerDependencies": {
-    "@material-ui/core": "^3.0.0",
+    "@material-ui/core": ">=3",
     "formik": ">=1",
     "react": "^16.3.0",
     "react-dom": "^16.3.0"
