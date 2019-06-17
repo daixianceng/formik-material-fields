@@ -4,7 +4,7 @@ import { Field } from 'formik';
 import { optionShape } from '../utils/PropTypes';
 import CheckboxGroupField from '../CheckboxGroupField';
 
-const FormikCheckboxGroupField = ({ render, ...props}) => {
+const FormikCheckboxGroupField = ({ render, ...props }) => {
   return <Field {...props} component={CheckboxGroupField} />;
 };
 
@@ -15,6 +15,7 @@ if (process.env.NODE_ENV !== 'production') {
     row: PropTypes.oneOf([true, false, 'all']),
     label: PropTypes.node,
     helperText: PropTypes.node,
+    render: PropTypes.func,
     CheckboxProps: PropTypes.object,
     FormGroupProps: PropTypes.object,
     FormLabelProps: PropTypes.object,

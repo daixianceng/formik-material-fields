@@ -10,7 +10,6 @@ const SelectField = ({
   native = false,
   InputLabelProps,
   SelectProps,
-  children,
   ...props
 }) => {
   const isNative = !multiple && native;
@@ -48,6 +47,8 @@ if (process.env.NODE_ENV !== 'production') {
     options: PropTypes.arrayOf(optionShape).isRequired,
     multiple: PropTypes.bool,
     native: PropTypes.bool,
+    InputLabelProps: PropTypes.object,
+    SelectProps: PropTypes.object,
   };
 }
 

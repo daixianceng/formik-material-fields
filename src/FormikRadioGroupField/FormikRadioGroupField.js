@@ -4,7 +4,7 @@ import { Field } from 'formik';
 import { optionShape } from '../utils/PropTypes';
 import RadioGroupField from '../RadioGroupField';
 
-const FormikRadioGroupField = ({ render, ...props}) => {
+const FormikRadioGroupField = ({ render, ...props }) => {
   return <Field {...props} component={RadioGroupField} />;
 };
 
@@ -15,6 +15,7 @@ if (process.env.NODE_ENV !== 'production') {
     row: PropTypes.oneOf([true, false, 'all']),
     label: PropTypes.node,
     helperText: PropTypes.node,
+    render: PropTypes.func,
     RadioProps: PropTypes.object,
     RadioGroupProps: PropTypes.object,
     FormLabelProps: PropTypes.object,

@@ -4,7 +4,7 @@ import { Field } from 'formik';
 import SelectField from '../SelectField';
 import { optionShape } from '../utils/PropTypes';
 
-const FormikSelectField = ({ render, ...props}) => {
+const FormikSelectField = ({ render, ...props }) => {
   return <Field {...props} component={SelectField} />;
 };
 
@@ -14,6 +14,7 @@ if (process.env.NODE_ENV !== 'production') {
     options: PropTypes.arrayOf(optionShape).isRequired,
     multiple: PropTypes.bool,
     native: PropTypes.bool,
+    render: PropTypes.func,
   };
 }
 

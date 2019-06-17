@@ -49,6 +49,8 @@ if (process.env.NODE_ENV !== 'production') {
     form: formShape.isRequired,
     helperText: PropTypes.node,
     children: PropTypes.node,
+    onChange: PropTypes.func,
+    onBlur: PropTypes.func,
   };
 }
 

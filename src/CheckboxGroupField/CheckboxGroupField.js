@@ -47,7 +47,7 @@ class CheckboxGroupField extends React.Component {
 
   render() {
     const {
-      field: { onChange: fieldOnChange, onBlur, ...field },
+      field,
       form: { touched, errors },
       options,
       multiple,
@@ -128,6 +128,7 @@ if (process.env.NODE_ENV !== 'production') {
     row: PropTypes.oneOf([true, false, 'all']),
     label: PropTypes.node,
     helperText: PropTypes.node,
+    onChange: PropTypes.func,
     CheckboxProps: PropTypes.object,
     FormGroupProps: PropTypes.object,
     FormLabelProps: PropTypes.object,

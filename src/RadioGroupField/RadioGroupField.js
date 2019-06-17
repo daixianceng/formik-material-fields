@@ -106,6 +106,7 @@ if (process.env.NODE_ENV !== 'production') {
     row: PropTypes.oneOf([true, false, 'all']),
     label: PropTypes.node,
     helperText: PropTypes.node,
+    onChange: PropTypes.func,
     RadioProps: PropTypes.object,
     RadioGroupProps: PropTypes.object,
     FormLabelProps: PropTypes.object,
