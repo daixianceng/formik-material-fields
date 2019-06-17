@@ -12,6 +12,7 @@ rollup.config.js
 
 # dev
 /src
+.eslintrc.*
 
 # docs
 /docs
