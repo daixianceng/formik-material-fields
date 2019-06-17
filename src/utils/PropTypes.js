@@ -10,6 +10,7 @@ export const fieldShape = PropTypes.shape({
 export const formShape = PropTypes.shape({
   touched: PropTypes.object,
   errors: PropTypes.object,
+  setFieldTouched: PropTypes.func,
 });
 
 export const optionShape = PropTypes.shape({

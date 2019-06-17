@@ -16,17 +16,13 @@ import { fieldShape, formShape, optionShape } from '../utils/PropTypes';
 import s from '../utils/rowStyles';
 
 class CheckboxGroupField extends React.Component {
-  state = {
-    dirty: false,
-  };
-
   static defaultProps = {
     row: false,
     multiple: false,
   };
 
   handleChange = event => {
-    const { field, multiple } = this.props;
+    const { field, form, multiple, onChange } = this.props;
     let value;
     if (multiple) {
       value = toggle(this.filterValue(field.value), event.target.value);
@@ -36,13 +32,11 @@ class CheckboxGroupField extends React.Component {
     field.onChange({
       target: { value, name: field.name },
     });
-    if (this.props.onChange) {
-      this.props.onChange(value);
+    if (onChange) {
+      onChange(value);
     }
-    if (!this.state.dirty) {
-      this.setState({
-        dirty: true,
-      });
+    if (!getIn(form.touched, field.name)) {
+      form.setFieldTouched(field.name);
     }
   };
 
@@ -54,7 +48,7 @@ class CheckboxGroupField extends React.Component {
   render() {
     const {
       field: { onChange: fieldOnChange, onBlur, ...field },
-      form: { errors },
+      form: { touched, errors },
       options,
       multiple,
       label,
@@ -70,7 +64,7 @@ class CheckboxGroupField extends React.Component {
       classes,
       ...props
     } = this.props;
-    const message = this.state.dirty && getIn(errors, field.name);
+    const message = getIn(touched, field.name) && getIn(errors, field.name);
     return (
       <FormControl
         className={cx({ [classes.rowContainer]: row === 'all' }, className)}

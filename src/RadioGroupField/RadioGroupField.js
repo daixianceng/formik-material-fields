@@ -15,30 +15,25 @@ import { fieldShape, formShape, optionShape } from '../utils/PropTypes';
 import s from '../utils/rowStyles';
 
 class RadioGroupField extends React.Component {
-  state = {
-    dirty: false,
-  };
-
   static defaultProps = {
     row: false,
   };
 
   handleChange = event => {
-    this.props.field.onChange(event);
-    if (this.props.onChange) {
-      this.props.onChange(event.target.value);
+    const { field, form, onChange } = this.props;
+    field.onChange(event);
+    if (onChange) {
+      onChange(event.target.value);
     }
-    if (!this.state.dirty) {
-      this.setState({
-        dirty: true,
-      });
+    if (!getIn(form.touched, field.name)) {
+      form.setFieldTouched(field.name);
     }
   };
 
   render() {
     const {
       field: { onChange: fieldOnChange, onBlur, ...field },
-      form: { errors },
+      form: { touched, errors },
       options,
       label,
       row,
@@ -53,7 +48,7 @@ class RadioGroupField extends React.Component {
       classes,
       ...props
     } = this.props;
-    const message = this.state.dirty && getIn(errors, field.name);
+    const message = getIn(touched, field.name) && getIn(errors, field.name);
     return (
       <FormControl
         className={cx({ [classes.rowContainer]: row === 'all' }, className)}
