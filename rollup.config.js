@@ -3,6 +3,7 @@ import resolve from 'rollup-plugin-node-resolve';
 import babel from 'rollup-plugin-babel';
 import replace from 'rollup-plugin-replace';
 import { uglify } from 'rollup-plugin-uglify';
+import { eslint } from 'rollup-plugin-eslint';
 import pkg from './package.json';
 
 const env = process.env.NODE_ENV;
@@ -14,6 +15,7 @@ const config = {
     format: 'umd',
   },
   plugins: [
+    eslint(),
     resolve({
       browser: true,
       customResolveOptions: {
