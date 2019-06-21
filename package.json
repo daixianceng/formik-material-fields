@@ -1,6 +1,6 @@
 {
   "name": "formik-material-fields",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "A set of material style fields for formik",
   "main": "lib/index.js",
   "module": "es/index.js",
