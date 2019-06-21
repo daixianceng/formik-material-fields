@@ -107,7 +107,7 @@ if (process.env.NODE_ENV !== 'production') {
     falseValue: PropTypes.any,
     label: PropTypes.node,
     controlLabel: PropTypes.node,
-    controlComponent: PropTypes.func.isRequired,
+    controlComponent: PropTypes.any.isRequired,
     helperText: PropTypes.node,
     onChange: PropTypes.func,
     ControlProps: PropTypes.object,
